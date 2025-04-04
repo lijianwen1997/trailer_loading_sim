@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="red_truck">
+    <pose>0 0 0 0 0 0</pose>
+    <static>true</static>
+    <link name="body">
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>model://red_truck/media/redtruck.dae</uri></mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh><uri>model://red_truck/media/redtruck.dae</uri></mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="trailer">
+    <pose>0 0 -42 0 0 0</pose>
+    <static>true</static>
+    <link name="body">
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>model://trailer/media/trailer.dae</uri></mesh>
+        </geometry>
+
+      </visual>
+
+      <visual name="panel_1">
+        <pose>1.85 0.00 1.4 0 1.57 1.57</pose>
+        <geometry>
+          <box>
+            <size>.192 .01 .386</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+        <plugin name="vrx::LightBuoyPlugin" filename="libLightBuoyPlugin.so">
+          <color_1>red</color_1>
+          <color_2>green</color_2>
+          <color_3>red</color_3>
+          <visuals>
+            <visual>trailer::body::panel_1</visual>
+          </visuals>
+        </plugin>
+      </visual>
+
+      <visual name="panel_2">
+        <pose>1.84 0.00 1.4 0 1.57 1.57</pose>
+        <geometry>
+          <box>
+            <size>.192 .01 .386</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+
+
+      <collision name="collision">
+        <geometry>
+          <mesh><uri>model://trailer/media/trailer.dae</uri></mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>
