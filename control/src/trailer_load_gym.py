@@ -179,12 +179,12 @@ class TrailerLoadEnv(gym.Env):
 
         # Calculate reward (implement your own reward function)
         reward = self._calculate_reward()
-        if self.episope_cnt > self.episode_max_step or self.loading:
+        if self.episope_cnt > self.episode_max_step:
             self.episode_done = True
         # Check if episode is done
-        terminated = self.episode_done
-        truncated = False  # You can set this if you have a max episode length
-        if terminated:
+        terminated = self.loading
+        truncated = self.episode_done  # You can set this if you have a max episode length
+        if terminated or truncated:
             self.episode_done = False  # Reset for next episode
 
         # Additional info (optional)
